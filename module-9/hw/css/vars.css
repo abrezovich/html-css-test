@@ -1,0 +1,27 @@
+:root{
+    --background-color: #ffffff;
+    --footer-background-color:#30455b;
+    --quote-background-color:#fcfafa;
+    --link-color:#ffffff;
+    --link-color-hover:#253455;
+    --background-sub-color:#f2f2f3;
+    --sub-text-color:#828999;
+    --link-text-color: #404b65;
+    --link-background-color:#38afe5;
+    --card-title-color: #e9eaec;
+    --card-text-color: #cbc6c6;
+    --card-background-color: #193149;
+    --btn-color: #f9f6fc;
+    --text-color:#4e5050;
+    --border-color:#dedbdb;
+    --counter-background-color:#38afe5;
+    --schar-color:#263555;
+    --schar-list-color:#84cdef;
+    --foter-text-color:#d5d8db;
+    --font-path: Pathway Gothic one;
+    --font-dorsa:Dorsa;
+    --font-footer: Open Sans Condensed;
+    --font-arial:Arial, Helvetica, sans-serif;
+    --span-color: #9bd1f0;
+
+}

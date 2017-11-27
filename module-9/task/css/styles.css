@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.yellow {
+height: 240px;
+
+  background-color: yellow;
+  
+}
+
+.green {
+  height:240px;
+  background-color: green;
+    
+}
+.tan{
+  height: 240px;
+  background-color: #D2B48C;
+}
+.lightpink{
+  height: 240px;
+  background-color: 	#FFB6C1;
+}

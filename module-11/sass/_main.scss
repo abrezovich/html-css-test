@@ -1,0 +1,24 @@
+.main {
+  max-width: px-to-rem(1024px);
+  background: $background-color;
+  padding:px-to-rem(40px);
+  margin: auto;
+&-link {
+  border-radius: 50%;
+  width: px-to-rem(35px);
+  background: $link-background-color;
+  text-decoration: none;
+  line-height:px-to-rem(35px);
+  margin-left: auto;
+ @include flex(flex,'',center,'','');
+ @include position(fixed,'',15%,'',5%,translateX(-50%));
+  
+}
+
+&-link:after {
+  content: "\003C";
+  transform: rotate(90deg);
+  @include font-settings(px-to-rem(48px),$font-path,$background-color);
+  
+}
+}

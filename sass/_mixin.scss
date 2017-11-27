@@ -1,0 +1,15 @@
+
+@mixin size($width, $heige) {
+    width: $width;
+    height: $heige;
+  }
+  @mixin font-settings($size, $family, $color) {
+    font-size: $size;
+    font-family: $family;
+    color: $color;
+  }
+  
+  @mixin text-decor($dekor, $transfor) {
+    text-decoration: $dekor;
+    text-transform: $transfor;
+  }

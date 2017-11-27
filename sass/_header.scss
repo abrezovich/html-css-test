@@ -1,0 +1,28 @@
+.header {
+    display: flex;
+    min-width: 100%;
+    min-height: px-to-rem(1000px);
+    margin: auto;
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../image/header.jpg);
+ 
+clip-path: polygon(0% 0%, 100% 0%,100% 87%, 50% 100%, 0% 87% );
+    background-size: cover;
+}
+
+.header-list {
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+    margin-top: px-to-rem(50px);
+}
+
+.header-list-item {
+    padding-right: px-to-rem(50px);
+}
+
+.header-list-link {
+    @include font-settings(px-to-rem(14px), $header-link-font, $header-link-color);
+    font-weight: bold;
+    @include text-decor(none, uppercase);
+    
+}

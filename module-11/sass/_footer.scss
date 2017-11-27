@@ -1,0 +1,71 @@
+  .footer {
+    max-width: px-to-rem(1024px);
+    margin: auto;
+    &-page {
+      margin: auto;
+      background: $footer-background-color;
+      padding: px-to-rem(40px) 0;
+    }
+    &-list {
+      list-style: none;
+      @include flex(flex, wrap, '', '', '');
+      margin-left: 0;
+      &-item {
+        @include flex(flex, '', space-evenly, '', '');
+        flex-basis: 33%;
+      }
+    }
+    &-text {
+      @include text-decor(none, uppercase);
+      display: inline-block;
+      margin-bottom: px-to-rem(15px);
+      @include font-settings(px-to-rem(16px), $font-footer, $foter-text-color);
+    }
+    @media( max-width:768px) {
+      &-box {
+        text-align: center;
+      }
+    }
+    @media( min-width:768px) {
+      &-box {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    &-legal {
+      text-align: center;
+      color: $quote-background-color;
+    }
+  }
+
+  @media( max-width:768px) {
+    .mail::before {
+      content: "\2709";
+      margin-right: px-to-rem(48px);
+    }
+    .tel::before {
+      content: "\260E";
+      margin-right: px-to-rem(48px);
+    }
+  }
+
+  .social {
+    @include flex(flex, '', space-evenly, '', '');
+    width: px-to-rem(250px);
+    margin: px-to-rem(20px) auto;
+    &-icon {
+      display: block;
+      @include size(px-to-rem(40px), px-to-rem(40px));
+      &:hover {
+        filter: contrast(30%);
+      }
+    }
+  }
+
+  .circle {
+    fill: #FFFFFF;
+  }
+
+  .letter {
+    fill: #e4b265;
+  }
