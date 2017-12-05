@@ -13,3 +13,10 @@
     text-decoration: $dekor;
     text-transform: $transfor;
   }
+  @mixin flex($display, $wrap, $j-content,$a-item, $a-content){
+    display: $display;
+    flex-wrap: $wrap;
+    justify-content: $j-content;
+    align-items: $a-item;
+    align-content: $a-content;
+  }

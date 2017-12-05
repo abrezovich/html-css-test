@@ -1,9 +1,74 @@
-.main{
-    min-width: px-to-rem(1900px);
+.main {
+    min-width: 100%;
     min-height: 100vh;
     background-color: $background-color;
-   
+    position: relative;
 }
-.about{
+
+.main::before {
+    @include size(px-to-rem(50px), px-to-rem(50px));
+    content: '\2693';
+   
+    color: $header-link-hover-color;
+    border-radius: px-to-rem(25px) px-to-rem(25px);
     display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color:$header-link-color; 
+    left: 49%;
+    top: -0.5%;
+    font-size: px-to-rem(40px);
+   box-shadow: 0 -4px 3px 5px rgba(80, 75, 68, 0.3);
+}
+
+.about {
+    display: flex;
+}
+.who{
+    @include flex(flex,'',space-between,'','')
+}
+.who-card{
+    @include flex(flex,'',center,center,'');
+    flex-direction: column;
+    flex-basis: 22%;
+    margin-top: 110px;
+}
+.who-card-svg{
+ @include size(px-to-rem(25px),px-to-rem(25px));
+ fill:$header-link-hover-color; 
+ 
+ 
+}
+.who-icon{
+    @include flex(flex,'',center,center,'');
+    @include size(px-to-rem(70px),px-to-rem(70px));   
+    border: solid 1px $subtitle-font-color;
+margin-bottom: px-to-rem(35px);
+}
+.who-card-title{
+    @include font-settings(px-to-rem(18px), $header-link-font, $title-font-color);
+    font-weight: bold;
+}
+
+.who-trait{
+    @include size(px-to-rem(40px),px-to-rem(1px));  
+    background-color:$subtitle-font-color;
+    margin:  px-to-rem(25px) 0 px-to-rem(25px) 0;
+}
+.who-card:hover> .who-icon{
+    border-color: $header-link-hover-color;
+    transform: rotate(45deg);
+}
+.who-card:hover>.who-icon> .who-card-svg{
+    
+    transform: rotate(-45deg);
+}
+.who-card:hover>.who-card-title{
+    color: $header-link-hover-color;
+}
+.who-card-subtitle{
+    @include font-settings(px-to-rem(12px), $header-link-font, $subtitle-font-color);
+    text-align: center;
+    
 }
