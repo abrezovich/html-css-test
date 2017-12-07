@@ -6,8 +6,6 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../image/header.jpg);
     clip-path: polygon(0% 0%, 100% 0%, 100% 87%, 50% 100%, 0% 87%);
     background-size: cover;
-    
-   
     &-list {
         @include flex(flex, '', flex-end, '', '');
         list-style: none;
@@ -48,11 +46,11 @@
         }
         &-text {
             font-size: px-to-rem(14px);
-           width: 40%;
+            width: 40%;
         }
         &-trait-box {
             @include flex(flex, '', center, center, '');
-            margin-bottom:  px-to-rem(45px);
+            margin-bottom: px-to-rem(45px);
             &-point {
                 @include size(px-to-rem(10px), px-to-rem(10px));
                 border-radius: px-to-rem(10px);
@@ -65,5 +63,26 @@
             }
         }
     }
-    
+    &-link-box {
+        @include flex(flex, '', center, '', '');
+    }
+    &-link {
+        @include font-settings(px-to-rem(14px), $header-link-font, $header-link-color);
+        font-weight: bold;
+        @include text-decor(none, uppercase);
+        display: block;
+        @include size(px-to-rem(220px), px-to-rem(50px));
+        border: solid 1px $header-link-color;
+       padding: px-to-rem(14px);
+       text-align: center;
+       &:first-child{
+           margin-right: px-to-rem(30px);
+       }
+       &:hover{
+        border: none;
+        @include font-settings(px-to-rem(14px), $header-link-font, $header-link-color);
+        @include text-decor(none, '');
+        background-color: $header-link-hover-color;
+       }
+    }
 }
