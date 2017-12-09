@@ -21,6 +21,21 @@
     box-shadow: 0 -4px 3px 5px rgba(80, 75, 68, 0.3);
 }
 
+.trait-box {
+    @include flex(flex, '', center, center, '');
+    margin-bottom: px-to-rem(65px);
+    &-point {
+        @include size(px-to-rem(10px), px-to-rem(10px));
+        border-radius: px-to-rem(10px);
+        background-color: $header-link-hover-color;
+        margin: 0 px-to-rem(18px) 0 px-to-rem(18px);
+    }
+    &-trait {
+        @include size(px-to-rem(90px), px-to-rem(2px));
+        background-color: $background-color-darc;
+    }
+}
+
 .who {
     @include flex(flex, '', space-between, '', '');
     &-card {
@@ -111,6 +126,7 @@
     background-color: #202020;
     padding-top: px-to-rem(115px);
     padding-bottom: px-to-rem(115px);
+    margin-bottom: px-to-rem(140px);
     &-box {
         margin: auto;
         width: 50%;
@@ -160,16 +176,20 @@
 }
 
 .pricing {
+    text-align: center;
+    margin-bottom: px-to-rem(125px);
     &-title {
         @include font-settings(px-to-rem(36px), $header-link-font, $title-font-color);
         font-weight: bold;
+        margin-bottom: px-to-rem(30px);
     }
     &-subtitle {
         @include font-settings(px-to-rem(14px), $header-link-font, $title-font-color);
+        margin-bottom: px-to-rem(30px);
     }
     &-cost {
         position: absolute;
-        top: 22%;
+        top: 20%;
         left: 14%;
         @include size(px-to-rem(150px), px-to-rem(150px));
         border-radius: 50%;
@@ -182,9 +202,8 @@
             @include font-settings(px-to-rem(40px), $header-link-font, $title-font-color);
             font-weight: bold;
             margin-bottom: 0;
-            &::before{
+            &::before {
                 content: '\0024';
-
             }
         }
     }
@@ -193,6 +212,7 @@
         text-align: center;
         background: $header-link-color;
         position: relative;
+        padding-bottom: px-to-rem(50px);
         &-title {
             @include font-settings(px-to-rem(24px), $header-link-font, $header-link-color);
             font-weight: bold;
@@ -217,21 +237,216 @@
             text-align: center;
             box-shadow: 0 3px 3px 2px rgba(80, 75, 68, 0.1);
             margin: auto;
-           
-        
         }
-        &:hover>&-link{
+        &:hover>&-link {
             border: none;
             @include font-settings(px-to-rem(14px), $header-link-font, $header-link-color);
             @include text-decor(none, '');
             background-color: $header-link-hover-color;
         }
-        &:hover>&-title  {
+        &:hover>&-title {
             background: $header-link-hover-color;
+        }
+        &:hover>.pricing-cost>.pricing-cost-title {
+            @include font-settings(px-to-rem(40px), $header-link-font, $header-link-hover-color);
+        }
+    }
+}
+
+.client {
+    background: $header-link-color;
+    text-align: center;
+    padding: px-to-rem(140px) 0 px-to-rem(140px) 0;
+    border-bottom: solid px-to-rem(1px) $border-color;
+    &-title {
+        @include font-settings(px-to-rem(36px), $header-link-font, $title-font-color);
+        font-weight: bold;
+        margin-bottom: px-to-rem(30px);
+        @include text-decor('', uppercase);
+    }
+    &-subtitle {
+        @include font-settings(px-to-rem(14px), $header-link-font, $title-font-color);
+        margin: auto;
+        margin-bottom: px-to-rem(30px);
+        width: 40%;
+    }
+    &-box {
+        @include flex(flex, wrap, space-between, '', '');
+    }
+    &-logo {
+        flex-basis: 18%;
+        @include size(px-to-rem(200px), px-to-rem(100px));
+        background: $background-color;
+        fill: #c9c9c9;
+        &:nth-child(-n+5) {
+            margin-bottom: px-to-rem(25px);
+        }
+        &:hover {
+            background: $header-link-hover-color;
+            fill: $background-color;
+        }
+        &:hover>.bac {
+            fill: $header-link-hover-color;
         }
     }
 }
 
 .box {
     @include flex(flex, '', space-between, '', '');
+}
+
+.blog {
+    background: $header-link-color;
+    padding: px-to-rem(140px) 0 px-to-rem(70px) 0;
+    text-align: center;
+    &-title {
+        @include font-settings(px-to-rem(36px), $header-link-font, $title-font-color);
+        font-weight: bold;
+        margin-bottom: px-to-rem(30px);
+    }
+    &-subtitle {
+        @include font-settings(px-to-rem(14px), $header-link-font, $title-font-color);
+        margin-bottom: px-to-rem(30px);
+    }
+    &-box {
+        @include flex(flex, wrap, '', '', '');
+        background: $header-link-hover-color;
+        &-card {
+            display: flex;
+            flex-basis: 50%;
+        }
+    }
+    &-imafe {
+        flex-basis: 50%;
+    }
+    &-card {
+        padding: px-to-rem(60px) px-to-rem(40px) px-to-rem(60px) px-to-rem(40px);
+        flex-basis: 50%;
+        text-align: start;
+        &-note {
+            @include font-settings(px-to-rem(14px), $header-link-font, $blog-text-color);
+            margin-bottom: px-to-rem(30px);
+        }
+        &-title {
+            @include font-settings(px-to-rem(24px), $header-link-font, $blog-text-color);
+            font-weight: bold;
+            &::after {
+                display: block;
+                margin-bottom: px-to-rem(50px);
+                content: '\2014';
+            }
+        }
+        &-text {
+            @include font-settings(px-to-rem(16px), $header-link-font, $blog-text-color);
+            margin-bottom: px-to-rem(50px);
+        }
+        &-link {
+            @include font-settings(px-to-rem(18px), $header-link-font, $blog-text-color);
+            font-weight: bold;
+            font-style: italic;
+            @include text-decor(none, '');
+            &:after {
+                padding-left: px-to-rem(15px);
+                content: '\00BB';
+            }
+            &:hover {
+                color: $blog-text-color;
+                @include text-decor(none, '');
+            }
+        }
+    }
+    &-left {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 60%, 8% 50%, 0% 40%);
+    }
+    &-right {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 40%, 92% 50%, 100% 60%, 100% 100%, 0% 100%);
+    }
+}
+
+.contact {
+    background: $header-link-color;
+    padding: px-to-rem(70px) 0 px-to-rem(140px) 0;
+    text-align: center;
+    &-box {
+        @include flex(flex, '', space-between, '', '');
+    }
+    &-title {
+        @include font-settings(px-to-rem(36px), $header-link-font, $title-font-color);
+        font-weight: bold;
+        margin-bottom: px-to-rem(30px);
+        @include text-decor('', uppercase);
+    }
+    &-subtitle {
+        @include font-settings(px-to-rem(14px), $header-link-font, $title-font-color);
+        margin-bottom: px-to-rem(30px);
+    }
+}
+
+.adress-list {
+    list-style: none;
+    text-align: start;
+    flex-basis: 34%;
+    background: $background-color;
+    padding: px-to-rem(30px) px-to-rem(30px) px-to-rem(90px) px-to-rem(30px);
+    margin-bottom: 0;
+    &-item {
+        &-title {
+            margin-bottom: px-to-rem(32px);
+            margin-top: px-to-rem(60px);
+            @include font-settings(px-to-rem(24px), $header-link-font, $header-link-hover-color);
+            font-weight: bold;
+            @include text-decor('', uppercase);
+        }
+        &-text {
+            @include font-settings(px-to-rem(24px), $header-link-font, $title-font-color);
+        }
+    }
+}
+
+.feedback {
+    flex-basis: 64%;
+    @include flex(flex, '', flex-start, '', '');
+    flex-direction: column;
+    padding: px-to-rem(90px) px-to-rem(90px) px-to-rem(90px);
+    background-color: $background-color;
+    box-shadow: 0 4px 0 rgba(225, 226, 229, 0.3);
+}
+
+.form-item {
+    width: 100%;
+    margin-bottom: px-to-rem(27px);
+    padding-bottom: px-to-rem(14px);
+    @include font-settings(px-to-rem(24px), $header-link-font, $title-font-color);
+    border: 1px solid transparent;
+    border-bottom-color: #e5e5e5;
+}
+
+.form-area {
+    width: 99%;
+    margin-bottom: px-to-rem(24px);
+    resize: none;
+    @include font-settings(px-to-rem(24px), $header-link-font, $title-font-color);
+    border: 1px solid transparent;
+    border-bottom-color: #e5e5e5;
+}
+
+.feedback-btn {
+    @include font-settings(px-to-rem(14px), $header-link-font, $header-link-color);
+    font-weight: bold;
+    @include text-decor(none, uppercase);
+    display: block;
+    @include size(px-to-rem(220px), px-to-rem(50px));
+    border: solid 1px $header-link-color;
+    background-color: $title-font-color;
+    padding: px-to-rem(14px);
+    text-align: center;
+    box-shadow: 0 3px 3px 2px rgba(80, 75, 68, 0.1);
+    
+    
+    &:active{
+        border: none;
+        @include font-settings(px-to-rem(14px), $header-link-font, $header-link-color);
+        @include text-decor(none, '');
+        background-color: $header-link-hover-color;
+    }
 }
