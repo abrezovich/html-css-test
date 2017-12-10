@@ -1,0 +1,67 @@
+.blog {
+    background: $header-link-color;
+    padding: px-to-rem(140px) 0 px-to-rem(70px) 0;
+    text-align: center;
+    &-title {
+        @include font-settings(px-to-rem(36px), $header-link-font, $title-font-color);
+        font-weight: bold;
+        margin-bottom: px-to-rem(30px);
+    }
+    &-subtitle {
+        @include font-settings(px-to-rem(14px), $header-link-font, $title-font-color);
+        margin-bottom: px-to-rem(30px);
+    }
+    &-box {
+        @include flex(flex, wrap, '', '', '');
+        background: $header-link-hover-color;
+        &-card {
+            display: flex;
+            flex-basis: 50%;
+        }
+    }
+    &-imafe {
+        flex-basis: 50%;
+    }
+    &-card {
+        padding: px-to-rem(60px) px-to-rem(40px) px-to-rem(60px) px-to-rem(40px);
+        flex-basis: 50%;
+        text-align: start;
+        &-note {
+            @include font-settings(px-to-rem(14px), $header-link-font, $blog-text-color);
+            margin-bottom: px-to-rem(30px);
+        }
+        &-title {
+            @include font-settings(px-to-rem(24px), $header-link-font, $blog-text-color);
+            font-weight: bold;
+            &::after {
+                display: block;
+                margin-bottom: px-to-rem(50px);
+                content: '\2014';
+            }
+        }
+        &-text {
+            @include font-settings(px-to-rem(16px), $header-link-font, $blog-text-color);
+            margin-bottom: px-to-rem(50px);
+        }
+        &-link {
+            @include font-settings(px-to-rem(18px), $header-link-font, $blog-text-color);
+            font-weight: bold;
+            font-style: italic;
+            @include text-decor(none, '');
+            &:after {
+                padding-left: px-to-rem(15px);
+                content: '\00BB';
+            }
+            &:hover {
+                color: $blog-text-color;
+                @include text-decor(none, '');
+            }
+        }
+    }
+    &-left {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 60%, 8% 50%, 0% 40%);
+    }
+    &-right {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 40%, 92% 50%, 100% 60%, 100% 100%, 0% 100%);
+    }
+}

@@ -8,10 +8,9 @@
     font-family: $family;
     color: $color;
   }
-  
-  @mixin text-decor($dekor, $transfor) {
-    text-decoration: $dekor;
-    text-transform: $transfor;
+  @mixin text-decor($decor,$upper){
+    text-decoration: $decor;
+    text-transform: $upper;
   }
   @mixin flex($display, $wrap, $j-content,$a-item, $a-content){
     display: $display;

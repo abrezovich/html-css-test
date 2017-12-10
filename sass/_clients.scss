@@ -1,0 +1,42 @@
+
+.client {
+    background: $header-link-color;
+    text-align: center;
+    padding: px-to-rem(140px) 0 px-to-rem(140px) 0;
+    border-bottom: solid px-to-rem(1px) $border-color;
+    &-title {
+        @include font-settings(px-to-rem(36px), $header-link-font, $title-font-color);
+        font-weight: bold;
+        margin-bottom: px-to-rem(30px);
+        @include text-decor('', uppercase);
+    }
+    &-subtitle {
+        @include font-settings(px-to-rem(14px), $header-link-font, $title-font-color);
+        margin: auto;
+        margin-bottom: px-to-rem(30px);
+        width: 40%;
+    }
+    &-box {
+        @include flex(flex, wrap, space-between, '', '');
+    }
+    &-logo {
+        flex-basis: 18%;
+        @include size(px-to-rem(200px), px-to-rem(100px));
+        background: $background-color;
+        fill: #c9c9c9;
+        &:nth-child(-n+5) {
+            margin-bottom: px-to-rem(25px);
+        }
+        &:hover {
+            background-color: $header-link-hover-color;
+            fill: $background-color;
+        }
+        &:hover>.bac {
+            fill: $header-link-hover-color;
+        }
+    }
+}
+
+.box {
+    @include flex(flex, '', space-between, '', '');
+}

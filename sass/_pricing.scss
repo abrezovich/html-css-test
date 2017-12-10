@@ -1,0 +1,78 @@
+
+.pricing {
+    text-align: center;
+    margin-bottom: px-to-rem(125px);
+    &-title {
+        @include font-settings(px-to-rem(36px), $header-link-font, $title-font-color);
+        font-weight: bold;
+        margin-bottom: px-to-rem(30px);
+    }
+    &-subtitle {
+        @include font-settings(px-to-rem(14px), $header-link-font, $title-font-color);
+        margin-bottom: px-to-rem(30px);
+    }
+    &-cost-text {
+        @include font-settings(px-to-rem(14px), $header-link-font, $title-font-color);
+        font-weight: bold;
+        margin-bottom: 0;
+        position: absolute;
+        top: 19%;
+        left: 26%;
+        transform: translate(-50% 0);
+        @include size(px-to-rem(160px), px-to-rem(160px));
+        padding: px-to-rem(48px) 0;
+        border-radius: 100%;
+        text-align: center;
+        background: $background-color;
+        box-shadow: 0 0 3px 5px rgba(120, 120, 120, 0.7);
+    }
+    &-cost-title {
+        display: block;
+        @include font-settings(px-to-rem(40px), $header-link-font, $title-font-color);
+        text-align: center;
+    }
+    &-box {
+        flex-basis: 30%;
+        text-align: center;
+        background: $header-link-color;
+        position: relative;
+        padding-bottom: px-to-rem(50px);
+        &-title {
+            @include font-settings(px-to-rem(24px), $header-link-font, $header-link-color);
+            font-weight: bold;
+            background: $background-color-darc;
+            padding: px-to-rem(50px) 0 px-to-rem(130px);
+            margin: 0;
+        }
+        &-text {
+            @include font-settings(px-to-rem(14px), $header-link-font, $title-font-color);
+            line-height: 3;
+            padding: 100px 70px 50px 70px;
+        }
+        &-link {
+            @include font-settings(px-to-rem(14px), $header-link-font, $header-link-color);
+            font-weight: bold;
+            @include text-decor(none, uppercase);
+            display: block;
+            @include size(px-to-rem(220px), px-to-rem(50px));
+            border: solid 1px $header-link-color;
+            background-color: $title-font-color;
+            padding: px-to-rem(14px);
+            text-align: center;
+            box-shadow: 0 3px 3px 2px rgba(80, 75, 68, 0.1);
+            margin: auto;
+        }
+        &:hover>&-link {
+            border: none;
+            @include font-settings(px-to-rem(14px), $header-link-font, $header-link-color);
+            @include text-decor(none, '');
+            background-color: $header-link-hover-color;
+        }
+        &:hover>&-title {
+            background-color: $header-link-hover-color;
+        }
+        &:hover>.pricing-cost-text>.pricing-cost-title {
+            @include font-settings(px-to-rem(40px), $header-link-font, $header-link-hover-color);
+        }
+    }
+}

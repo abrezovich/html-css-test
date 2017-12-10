@@ -1,0 +1,34 @@
+.about {
+    display: flex;
+    margin-bottom: 150px;
+    &-title {
+        @include font-settings(px-to-rem(36px), $header-link-font, $title-font-color);
+        font-weight: bold;
+        border-left: solid px-to-rem(5px) $header-link-hover-color;
+        padding-left: px-to-rem(30px);
+        margin-bottom: px-to-rem(60px);
+    }
+    &-text {
+        @include font-settings(px-to-rem(14px), $header-link-font, $title-font-color);
+        line-height: 2;
+        margin-bottom: px-to-rem(40px);
+    }
+    &-link {
+        @include font-settings(px-to-rem(14px), $header-link-font, $header-link-color);
+        font-weight: bold;
+        @include text-decor(none, uppercase);
+        display: block;
+        @include size(px-to-rem(220px), px-to-rem(50px));
+        border: solid 1px $header-link-color;
+        background-color: $title-font-color;
+        padding: px-to-rem(14px);
+        text-align: center;
+        box-shadow: 0 3px 3px 2px rgba(80, 75, 68, 0.1);
+        &:hover {
+            border: none;
+            @include font-settings(px-to-rem(14px), $header-link-font, $header-link-color);
+            @include text-decor(none, '');
+            background-color: $header-link-hover-color;
+        }
+    }
+}

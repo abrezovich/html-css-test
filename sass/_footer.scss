@@ -1,0 +1,25 @@
+
+.footer {
+    background-color: $footer-color;
+    padding: px-to-rem(35px) 18%;
+    @include flex(flex, '', space-between, '', '');
+    &-icon {
+        display: inline-block;
+        margin-right: px-to-rem(18px);
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+    &-text {
+        @include font-settings(px-to-rem(14px), $header-link-font, $background-color-darc);
+    }
+}
+
+.social-icon {
+    width: px-to-rem(22px);
+    height: px-to-rem(22px);
+    fill: $background-color-darc;
+    &:hover {
+        fill: $header-link-hover-color;
+    }
+}

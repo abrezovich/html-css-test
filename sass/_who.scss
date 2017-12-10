@@ -1,0 +1,43 @@
+
+.who {
+    @include flex(flex, '', space-between, '', '');
+    &-card {
+        @include flex(flex, '', center, center, '');
+        flex-direction: column;
+        flex-basis: 22%;
+        margin-top: 110px;
+        &-svg {
+            @include size(px-to-rem(25px), px-to-rem(25px));
+            fill: $header-link-hover-color;
+        }
+        &-title {
+            @include font-settings(px-to-rem(18px), $header-link-font, $title-font-color);
+            font-weight: bold;
+        }
+        &:hover>.who-icon {
+            border-color: $header-link-hover-color;
+            transform: rotate(45deg);
+        }
+        &:hover>.who-icon>.who-card-svg {
+            transform: rotate(-45deg);
+        }
+        &:hover>.who-card-title {
+            color: $header-link-hover-color;
+        }
+        &-subtitle {
+            @include font-settings(px-to-rem(12px), $header-link-font, $subtitle-font-color);
+            text-align: center;
+        }
+    }
+    &-icon {
+        @include flex(flex, '', center, center, '');
+        @include size(px-to-rem(70px), px-to-rem(70px));
+        border: solid 1px $subtitle-font-color;
+        margin-bottom: px-to-rem(35px);
+    }
+    &-trait {
+        @include size(px-to-rem(40px), px-to-rem(1px));
+        background-color: $subtitle-font-color;
+        margin: px-to-rem(25px) 0 px-to-rem(25px) 0;
+    }
+}
